@@ -1,6 +1,5 @@
 // ! JANGAN DIMOFIDIKASI
-const dataBelanjaan = [
-  {
+const dataBelanjaan = [{
     id: "D-10001",
     nama: "Minyak Goreng Delima",
     harga: 25000,
@@ -21,10 +20,24 @@ const dataBelanjaan = [
 ];
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const listBelanjaan = null;
+const listBelanjaan = function(belanjaan) {
+  let result = [];
+
+  for (barang of belanjaan) {
+    result.push(`- ${barang.nama} x ${barang.kuantitas}`);
+  }
+  return result;
+};
 
 // boleh dimodifikasi bila ingin menggunakan deklarasi fungsi yang normal
-const totalBelanjaan = null;
+const totalBelanjaan = function(belanjaan) {
+  let result = 0;
+  for (barang of belanjaan) {
+    result += (barang.harga * barang.kuantitas);
+  }
+  return result;
+};
+// console.log(totalBelanjaan(dataBelanjaan));
 
 // ! JANGAN DIMODIFIKASI
 const main = () => {
